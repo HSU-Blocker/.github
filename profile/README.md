@@ -30,10 +30,11 @@ The platform guarantees **device authentication, data integrity, auditability, a
 
 Please follow the installation order below:
 
-1. **Blockchain**
-2. **Device Backend**
-3. **Manufacturer Backend**
-4. **Device & Manufacturer Frontend**
+1. [Blockchain](https://github.com/HSU-Blocker/Blocker_Blockchain_Network/blob/main/install.md)  
+2. [Device](https://github.com/HSU-Blocker/Blocker_Device/blob/main/install.md)  
+3. [Manufacturer Backend](https://github.com/HSU-Blocker/Blocker_Manufacturer_Backend/blob/main/install.md)  
+4. [Device Frontend](https://github.com/HSU-Blocker/Blocker_Device_Frontend/blob/main/install.md)  
+5. [Manufacturer Frontend](https://github.com/HSU-Blocker/Blocker_Manufacturer_Frontend/blob/main/install.md)
 
 For detailed setup instructions, refer to the `install.md` file in each repository.
 
