@@ -1,7 +1,7 @@
-# Blockchain Based IoT Software Update Platform
-> Hansung University Team **Blocker**
-<img widht="960" src="https://github.com/user-attachments/assets/1290dadf-f65c-4e51-af90-b5ec2b2ebfa1" />
+# Blockchain-Based IoT Software Update Platform  
+> Hansung University Team Blocker
 
+<img width="960" src="https://github.com/user-attachments/assets/1290dadf-f65c-4e51-af90-b5ec2b2ebfa1" />
 
 &nbsp;
 ## *****Contents*****
@@ -16,16 +16,17 @@
 - [Additional Info](#additional-info)
 - [Team Blocker Developers](#️-team-blocker-developers)
 
-
 &nbsp;
 ## *****Project Description*****
-본 프로젝트는 IoT 기기의 안전한 소프트웨어 업데이트를 위해 블록체인과 CP-ABE(속성 기반 암호화) 기술을 결합한 분산형 소프트웨어 업데이트 플랫폼이다.   
-업데이트 내역을 블록체인에 기록함으로써 제조사가 임의로 수정할 수 없도록 하여 투명성을 확보하고, 스마트 계약을 통해 소프트웨어 배포와 결제를 원자적으로 처리한다.   
-CP-ABE를 활용해 제조사의 업데이트 정책과 속성이 일치하는 디바이스만 업데이트가 가능하도록 함으로써 안전한 업데이트를 제공하고, IPFS를 활용해 대용량 업데이트 파일을 분산적으로 저장하여 효율적으로 관리한다.   
-이를 통해 기기 인증, 무결성, 감사 가능성, 고가용성을 보장하며, 제조사와 사용자 모두에게 안전하고 효율적인 업데이트 환경을 제공한다.
+This project presents a decentralized software update platform that integrates **blockchain** and **CP-ABE (Ciphertext-Policy Attribute-Based Encryption)** technologies to ensure secure IoT device updates.  
+By recording update logs on the blockchain, the system ensures transparency and prevents tampering by manufacturers.  
+Smart contracts enable **atomic software distribution and payment**, ensuring both security and accountability.  
+Using CP-ABE, only devices whose attributes match the manufacturer’s update policy can decrypt and install updates, providing a fine-grained access control mechanism.  
+Additionally, **IPFS** is used for distributed storage of large update files, improving scalability and fault tolerance.  
+The platform guarantees **device authentication, data integrity, auditability, and high availability**, offering a secure and efficient environment for both manufacturers and users.
 
-
-## Installation
+&nbsp;
+## *****Installation*****
 
 Please follow the installation order below:
 
@@ -34,52 +35,50 @@ Please follow the installation order below:
 3. **Manufacturer Backend**
 4. **Device & Manufacturer Frontend**
 
-For detailed installation instructions, please refer to the `install.md` file in each repository.
-
+For detailed setup instructions, refer to the `install.md` file in each repository.
 
 &nbsp;
 ## *****Architecture*****
 <p align="center">
-  <img width="1860" height="1500" alt="블로커 아키텍처 오픈소스" src="https://github.com/user-attachments/assets/1508c083-76b8-439b-a385-8e39b34d9fc9" />
+  <img width="1860" height="1500" alt="Blocker Architecture Open Source" src="https://github.com/user-attachments/assets/1508c083-76b8-439b-a385-8e39b34d9fc9" />
 </p>
-
 
 &nbsp;
 ## *****Technologies Used*****
 
 ### Frontend
-- React
-- Vite
-- TypeScript
-- JavaScript
-- Three.js (시각화 도구)
-- Docker
+- React  
+- Vite  
+- TypeScript  
+- JavaScript  
+- Three.js (for visualization)  
+- Docker  
 
 ### Backend
-- Python
-- Flask
-- Web3.py (블록체인 연동)
-- Docker
-- AWS
-- Swagger (API 문서화)
+- Python  
+- Flask  
+- Web3.py (Blockchain integration)  
+- Docker  
+- AWS  
+- Swagger (API Documentation)
 
 ### Blockchain
-- Solidity (스마트 컨트랙트)
-- Ganache (로컬 블록체인 테스트 환경)
-- Ethereum Smart Contract
-- Registry Service
-- Web3.py
-- Docker
-- AWS
+- Solidity (Smart Contracts)  
+- Ganache (Local blockchain test environment)  
+- Ethereum Smart Contract  
+- Registry Service  
+- Web3.py  
+- Docker  
+- AWS  
 
 ### Security / Cryptography
-- CP-ABE (속성 기반 암호화)
-- AES-256 (대칭키 암호화)
-- SHA3-256 (무결성 해시)
-- ECDSA (전자 서명 및 검증)
+- CP-ABE (Attribute-Based Encryption)  
+- AES-256 (Symmetric Encryption)  
+- SHA3-256 (Integrity Hash)  
+- ECDSA (Digital Signature and Verification)
 
 ### Distributed File System
-- IPFS (분산 P2P 파일 시스템)
+- IPFS (InterPlanetary File System)
 
 
 &nbsp;
@@ -97,18 +96,18 @@ For detailed installation instructions, please refer to the `install.md` file in
   </tr>
 </table>
 
-**제조사 주요 기능**
+**Manufacturer Functions**
+- Encrypts update files using **AES-256**, then encrypts the symmetric key with **CP-ABE** to enforce **access control policies**.  
+- Generates **SHA3-256 hash values** for integrity verification.  
+- Uploads encrypted files to **IPFS**, obtaining the **Content Identifier (CID)**.  
+- Registers update UID, IPFS hash (CID), and encrypted key on the **smart contract**.  
+- Signs the registered data using **ECDSA private key** and records it on the blockchain for **tamper prevention**.  
+- Handles **software distribution and payment atomically** via smart contracts.  
+- Registers deployed contract addresses to the **registry contract** for centralized referencing.  
+- Uses **Three.js** for visualizing blockchain/IPFS-based update registration processes.
 
-- **업데이트 파일**을 **AES-256으로 암호화**하고, 생성된 **대칭키(kbj)** 를 **CP-ABE로 암호화**하여 **접근 제어 정책** 적용  
-- 암호화된 파일(Es)에 대해 **SHA3-256 해시 값을 생성**하여 **무결성 검증 기준값(hEbj)** 확보  
-- 암호화된 파일을 **IPFS에 업로드**하고, 해당 파일의 **콘텐츠 식별자(CID)** 를 획득  
-- 업데이트 UID, IPFS 해시(CID), 암호화된 키(encrypted_key)를 **스마트 컨트랙트에 등록**  
-- 등록된 데이터를 **ECDSA 개인키로 서명**하고, **서명 결과를 블록체인에 함께 기록**하여 **위변조 방지**  
-- **스마트 컨트랙트**를 통해 **소프트웨어 업데이트의 배포 및 결제** 를 **원자적(Atomic)으로 처리**  
-- 배포된 **스마트 컨트랙트 주소**를 **레지스트리 컨트랙트에 자동 등록**하여 다른 서비스에서 **중앙 참조** 가능하도록 구성  
-- **Three.js**를 활용하여 블록체인 및 IPFS 기반 소프트웨어 업데이트 등록 과정을 시각화
-  
-&nbsp;
+
+
 ### Device
 <table>
   <tr>
@@ -117,34 +116,34 @@ For detailed installation instructions, please refer to the `install.md` file in
   </tr>
 </table>
 
-**디바이스 주요 기능**
-- 블록체인에서 **새로운 소프트웨어 업데이트 등록 이벤트를 감지**  
-- **IPFS에서 암호화된 업데이트 파일(Es)** 을 다운로드  
-- 다운로드된 파일의 **SHA3-256 해시 값을 계산**하고, 등록된 기준 해시(**hEbj**)와 비교하여 **무결성 검증 수행**  
-- **CP-ABE로 암호화된 대칭키(encrypted_key)** 를 복호화하여 **원본 대칭키(kbj)** 획득  
-- 복호화한 **kbj를 직렬화한 뒤 SHA-256 해싱**하여 **AES-256 키 생성**  
-- 생성된 **AES 키를 사용해 업데이트 파일을 복호화**하여 **원본 파일(bj)** 복원  
-- 복호화 및 검증이 완료된 파일을 **디바이스에 설치**하고, **설치 완료 여부를 스마트 컨트랙트를 통해 블록체인에 기록**  
-- **Three.js**를 활용하여 블록체인 및 IPFS 기반 소프트웨어 업데이트 설치 과정 시각화
-- 업데이트 설치 완료 후, 실제 **IoT 기기의 동작(직진, 후진 등)** 을 수행하여 소프트웨어 적용 결과 확인
-
+**Device Functions**
+- Detects new software update registration events on the blockchain.  
+- Downloads encrypted update files (Es) from **IPFS**.  
+- Computes **SHA3-256 hash** and compares it to the registered hash (hEbj) for integrity verification.  
+- Decrypts the **CP-ABE-encrypted symmetric key** to obtain the original key (kbj).  
+- Hashes the serialized kbj using SHA-256 to generate an **AES-256 key**.  
+- Decrypts the update file with the AES key to restore the original file (bj).  
+- Installs the verified update and records installation status on the blockchain.  
+- Visualizes the update installation process using **Three.js**.  
+- Demonstrates actual IoT device operations (e.g., move forward/backward) after successful installation.
 
 &nbsp;
 ## *****Expected Impact*****
-1. **보안 위협 차단**  
-   IoT 기기의 소프트웨어 업데이트 과정에서 발생할 수 있는 무단 접근, 위조, 결제 미이행 등의 보안 위협을 차단하고  
-   기기 인증 및 데이터 무결성을 보장
 
-2. **신뢰성 확보**  
-   CP-ABE를 통해 제조사의 정책과 일치하는 속성을 가진 디바이스만 복호화가 가능하며,  
-   블록체인 및 스마트 컨트랙트를 통해 결제 및 배포 과정의 신뢰성을 강화
+1. **Security Enhancement**  
+   Prevents unauthorized access, forgery, and payment bypass during IoT software updates.  
+   Ensures device authentication and data integrity.  
 
-3. **감사 가능성**  
-   모든 업데이트 내역이 블록체인에 투명하게 기록되어 조작이 불가능하고, 
-   감사 및 컴플라이언스 대응이 용이
+2. **Trustworthiness**  
+   CP-ABE ensures only devices matching the manufacturer’s policy can decrypt updates.  
+   Smart contracts reinforce transparency and reliability in distribution and payment.  
 
-4. **확장성 및 고가용성**  
-   IPFS 기반의 파일 분산 저장 구조를 통해 대규모 IoT 환경에서도 뛰어난 확장성과 고가용성을 제공
+3. **Auditability**  
+   All update records are immutably stored on the blockchain for transparent auditing.  
+
+4. **Scalability & Availability**  
+   IPFS-based distributed storage ensures scalability and reliability across large IoT ecosystems.
+
 
 &nbsp;
 ## *****Achievements and Future Research*****
@@ -154,14 +153,17 @@ For detailed installation instructions, please refer to the `install.md` file in
 >
 > ※ **2025 한성대학교 컴퓨터공학부 캡스톤 디자인 우수상** (모바일소프트웨어트랙 부분)
 > 
-> ※ **SW산학협력프로젝트**를 통해 SDV(Software-Defined Vehicle) 환경에 적합한 음성 인식 기반 OTA 소프트웨어 업데이트 적용 기법을 연구하였으며, 이를 통해 음성 인식 기능을 도입하여 소프트웨어 업데이트 접근 제어의 보안성을 한층 강화하였음.
+> ※ **SW산학협력프로젝트**를 통해 현대자동차 연구원의 자문을 받아 SDV(Software-Defined Vehicle) 환경에 최적화된 음성 인식 기반 OTA 소프트웨어 업데이트 기법을 연구
+
+
 
 &nbsp;
 ## *****Additional Info*****
-| Category       | Description                                |
-|----------------|--------------------------------------------|
-| Demo Video     | [Watch the demo](https://youtu.be/v9fQUMm7_Fg) |
-| Panel Info     | [View panel](https://github.com/user-attachments/files/20480591/Blocker.pdf) |
+
+| Category | Description |
+|-----------|-------------|
+| Demo Video | [Watch the demo](https://youtu.be/v9fQUMm7_Fg) |
+| Panel Info | [View panel](https://github.com/user-attachments/files/20480591/Blocker.pdf) |
 
 
 &nbsp;
