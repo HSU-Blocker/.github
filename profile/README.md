@@ -7,6 +7,7 @@
 ## *****Contents*****
 - [Project Description](#project-description)
 - [Architecture](#architecture)
+- [Installation](#installation)
 - [Technologies Used](#technologies-used)
 - [Main Features](#-main-features)
   - [Manufacturer](#manufacturer)
@@ -26,6 +27,12 @@ Additionally, **IPFS** is used for distributed storage of large update files, im
 The platform guarantees **device authentication, data integrity, auditability, and high availability**, offering a secure and efficient environment for both manufacturers and users.
 
 &nbsp;
+## *****Architecture*****
+<p align="center">
+  <img width="1860" height="1500" alt="Blocker Architecture Open Source" src="https://github.com/user-attachments/assets/1508c083-76b8-439b-a385-8e39b34d9fc9" />
+</p>
+
+&nbsp;
 ## *****Installation*****
 
 Please follow the installation order below:
@@ -37,12 +44,6 @@ Please follow the installation order below:
 5. [Manufacturer Frontend](https://github.com/HSU-Blocker/Blocker_Manufacturer_Frontend/blob/main/install.md)
 
 For detailed setup instructions, refer to the `install.md` file in each repository.
-
-&nbsp;
-## *****Architecture*****
-<p align="center">
-  <img width="1860" height="1500" alt="Blocker Architecture Open Source" src="https://github.com/user-attachments/assets/1508c083-76b8-439b-a385-8e39b34d9fc9" />
-</p>
 
 &nbsp;
 ## *****Technologies Used*****
