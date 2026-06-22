@@ -12,6 +12,7 @@
 - [Main Features](#-main-features)
   - [Manufacturer](#manufacturer)
   - [Device](#device)
+  - [Speaker Recognition](#speaker-recognition)
 - [Expected Impact](#expected-impact)
 - [Achievements and Future Research](#achievements-and-future-research)
 - [Additional Info](#additional-info)
@@ -29,7 +30,7 @@ The platform guarantees **device authentication, data integrity, auditability, a
 &nbsp;
 ## *****Architecture*****
 <p align="center">
-  <img width="1860" height="1500" alt="Blocker Architecture Open Source" src="https://github.com/user-attachments/assets/1508c083-76b8-439b-a385-8e39b34d9fc9" />
+  <img width="1860" height="1500" alt="Blocker Architecture Open Source" src="https://github.com/user-attachments/assets/3f5a7b69-e618-4fc8-9212-d9e2f695d5d5" />
 </p>
 
 &nbsp;
@@ -82,6 +83,13 @@ For detailed setup instructions, refer to the `install.md` file in each reposito
 ### Distributed File System
 - IPFS (InterPlanetary File System)
 
+### AI
+- STT/TTS
+- RASA
+- LLM
+- NLU
+- MCP
+- [Hugging Face Speaker Recognition Model](https://huggingface.co/pyannote/speaker-diarization)
 
 &nbsp;
 ## ✨ *****Main Features*****
@@ -89,12 +97,40 @@ For detailed setup instructions, refer to the `install.md` file in each reposito
 ### Manufacturer
 <table>
   <tr>
-    <td><img width="500" height="250" src="https://github.com/user-attachments/assets/b9aeac84-ceb9-4d2f-bda7-06174e1e72cd" /></td>
-    <td><img width="500" height="250" src="https://github.com/user-attachments/assets/69b90301-c7ef-4aa5-85b9-f2aee1d46f71" /></td>
+    <td width="50%" height="250">
+      <img
+        width="500"
+        height="250"
+        style="object-fit: cover;"
+        src="https://github.com/user-attachments/assets/b9aeac84-ceb9-4d2f-bda7-06174e1e72cd"
+      />
+    </td>
+    <td width="50%" height="250">
+      <img
+        width="500"
+        height="250"
+        style="object-fit: cover;"
+        src="https://github.com/user-attachments/assets/69b90301-c7ef-4aa5-85b9-f2aee1d46f71"
+      />
+    </td>
   </tr>
   <tr>
-    <td><img width="500" height="250" src="https://github.com/user-attachments/assets/f9a37c23-d531-4734-a88f-4a39f24d5ed5" /></td>
-    <td><img width="500" height="250" src="https://github.com/user-attachments/assets/b1e83948-0e5a-4865-b9f5-79eae5d0b4eb" /></td>
+    <td width="50%" height="250">
+      <img
+        width="500"
+        height="250"
+        style="object-fit: cover;"
+        src="https://github.com/user-attachments/assets/f9a37c23-d531-4734-a88f-4a39f24d5ed5"
+      />
+    </td>
+    <td width="50%" height="250">
+      <img
+        width="500"
+        height="250"
+        style="object-fit: cover;"
+        src="https://github.com/user-attachments/assets/b1e83948-0e5a-4865-b9f5-79eae5d0b4eb"
+      />
+    </td>
   </tr>
 </table>
 
@@ -109,16 +145,29 @@ For detailed setup instructions, refer to the `install.md` file in each reposito
 - Uses **Three.js** for visualizing blockchain/IPFS-based update registration processes.
 
 
-
 ### Device
 <table>
   <tr>
-    <td><img width="500" height="250" src="https://github.com/user-attachments/assets/1290dadf-f65c-4e51-af90-b5ec2b2ebfa1" /></td>
-    <td><img width="500" height="250" src="https://github.com/user-attachments/assets/b0f34620-ff57-46ce-b87a-61108d3c85bc" /></td>
+    <td width="50%" height="250">
+      <img
+        width="500"
+        height="250"
+        style="object-fit: cover;"
+        src="https://github.com/user-attachments/assets/1290dadf-f65c-4e51-af90-b5ec2b2ebfa1"
+      />
+    </td>
+    <td width="50%" height="250">
+      <img
+        width="500"
+        height="250"
+        style="object-fit: cover;"
+        src="https://github.com/user-attachments/assets/b0f34620-ff57-46ce-b87a-61108d3c85bc"
+      />
+    </td>
   </tr>
 </table>
 
-**Device Functions**
+#### **Device Functions**
 - Detects new software update registration events on the blockchain.  
 - Downloads encrypted update files (Es) from **IPFS**.  
 - Computes **SHA3-256 hash** and compares it to the registered hash (hEbj) for integrity verification.  
@@ -128,6 +177,25 @@ For detailed setup instructions, refer to the `install.md` file in each reposito
 - Installs the verified update and records installation status on the blockchain.  
 - Visualizes the update installation process using **Three.js**.  
 - Demonstrates actual IoT device operations (e.g., move forward/backward) after successful installation.
+
+
+&nbsp;
+### Speaker Recognition
+<img width="2092" height="752" alt="Speach Recognition" src="https://github.com/user-attachments/assets/7154e779-ef4c-4dce-9897-7b9654078c36" />
+
+#### ***Voice-Based OTA Updates***
+
+- Restricts update requests, approvals, deferrals, and explanation interactions to the **verified vehicle owner** through **speaker recognition**.
+- Uses **MCP** to analyze differences from previous update history and provide **natural-language responses** to user inquiries.
+- Leverages **LLM and NLU technologies** to accurately understand diverse user expressions and intents, then guide users through OTA update-related actions naturally.
+- Supports **multilingual voice interfaces** by applying **STT and TTS technologies**.
+
+#### ***Voice-Based Autonomous Driving***
+
+- Enables **voice-controlled autonomous driving commands**, including going straight, stopping, and navigating to specific destinations such as schools, offices, or hospitals.
+- Uses **LLM and NLU technologies** to understand commands expressed in different sentence structures, tones, and speaking styles, then connects them to autonomous driving functions for execution.
+- Supports **multilingual voice interfaces** through **STT and TTS technologies**, similar to the voice-based OTA update feature.
+
 
 &nbsp;
 ## *****Expected Impact*****
