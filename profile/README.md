@@ -134,7 +134,7 @@ For detailed setup instructions, refer to the `install.md` file in each reposito
   </tr>
 </table>
 
-**Manufacturer Functions**
+***Manufacturer Functions***
 - Encrypts update files using **AES-256**, then encrypts the symmetric key with **CP-ABE** to enforce **access control policies**.  
 - Generates **SHA3-256 hash values** for integrity verification.  
 - Uploads encrypted files to **IPFS**, obtaining the **Content Identifier (CID)**.  
@@ -167,7 +167,7 @@ For detailed setup instructions, refer to the `install.md` file in each reposito
   </tr>
 </table>
 
-#### **Device Functions**
+#### ***Device Functions***
 - Detects new software update registration events on the blockchain.  
 - Downloads encrypted update files (Es) from **IPFS**.  
 - Computes **SHA3-256 hash** and compares it to the registered hash (hEbj) for integrity verification.  
@@ -223,7 +223,7 @@ For detailed setup instructions, refer to the `install.md` file in each reposito
 >
 > ※ **2025 한성대학교 컴퓨터공학부 캡스톤 디자인 우수상** (모바일소프트웨어트랙 부분)
 > 
-> ※ **SW산학협력프로젝트**를 통해 현대자동차 연구원의 자문을 받아 SDV(Software-Defined Vehicle) 환경에 최적화된 음성 인식 기반 OTA 소프트웨어 업데이트 기법을 연구
+> ※ **SW산학협력프로젝트**를 통해 **현대자동차** 연구원의 자문을 받아 SDV(Software-Defined Vehicle) 환경에 최적화된 음성 인식 기반 OTA 소프트웨어 업데이트 기법을 연구
 
 
 
